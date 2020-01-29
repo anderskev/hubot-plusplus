@@ -78,6 +78,7 @@ module.exports = (robot) ->
     # do the {up, down}vote, and figure out what the new score is
     [score, reasonScore] = if operator == "++"
               scoreKeeper.add(name, from, room, reason)
+              scoreKeeper.subtract('keith', from, room, 'spamming botton')
             else
               scoreKeeper.subtract(name, from, room, reason)
 
